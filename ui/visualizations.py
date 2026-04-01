@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any
+
 import altair as alt
 import pandas as pd
 from src.models import ProjectInput
