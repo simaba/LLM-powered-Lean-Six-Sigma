@@ -65,7 +65,7 @@ PDF · Word (.docx) · Excel (.xlsx, 6-sheet workbench) · HTML · Markdown
 git clone https://github.com/simaba/LLM-powered-Lean-Six-Sigma.git
 cd LLM-powered-Lean-Six-Sigma
 pip install -r requirements.txt
-streamlit run app.py
+py -m streamlit run app.py
 ```
 
 The app opens in your browser at `http://localhost:8501`.
