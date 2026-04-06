@@ -642,19 +642,8 @@ def render_tool_recommender() -> None:
     # -----------------------------------------------------------------------
     # Initialise session state keys (avoids KeyError on first run)
     # -----------------------------------------------------------------------
-    _defaults: dict[str, object] = {
-        "rec_submitted": False,
-        "rec_q1": None,
-        "rec_q2": None,
-        "rec_q3": None,
-        "rec_q4": None,
-        "rec_q5": None,
-        "rec_q6": None,
-        "rec_q7": None,
-    }
-    for key, val in _defaults.items():
-        if key not in st.session_state:
-            st.session_state[key] = val
+if "rec_submitted" not in st.session_state:
+    st.session_state["rec_submitted"] = False
 
     # -----------------------------------------------------------------------
     # Step 1 — Diagnostic questions (shown when not yet submitted)
