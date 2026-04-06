@@ -1,9 +1,9 @@
-# LSS Copilot — LLM-powered Lean Six Sigma
+# AI Process Excellence — LLM-powered Lean Six Sigma
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-app-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/simaba/LLM-powered-Lean-Six-Sigma)](https://github.com/simaba/LLM-powered-Lean-Six-Sigma/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/simaba/lean-ai-ops)](https://github.com/simaba/lean-ai-ops/commits/main)
 
 An AI copilot that turns informal project descriptions into rigorous, evidence-tagged Lean Six Sigma improvement packages — with a full Black Belt analytics workbench for quantitative analysis.
 
@@ -62,7 +62,7 @@ PDF · Word (.docx) · Excel (.xlsx, 6-sheet workbench) · HTML · Markdown
 ### Install and run
 
 ```bash
-git clone https://github.com/simaba/LLM-powered-Lean-Six-Sigma.git
+git clone https://github.com/simaba/lean-ai-ops.git
 cd LLM-powered-Lean-Six-Sigma
 pip install -r requirements.txt
 py -m streamlit run app.py
@@ -125,15 +125,15 @@ This repository is part of a connected toolkit for responsible AI operations:
 
 | Repository | Purpose |
 |-----------|---------|
-| [Enterprise AI Governance Playbook](https://github.com/simaba/enterprise-ai-governance-playbook) | End-to-end AI operating model from intake to improvement |
-| [AI Release Governance Framework](https://github.com/simaba/ai-release-governance-framework) | Risk-based release gates for AI systems |
-| [AI Release Readiness Checklist](https://github.com/simaba/ai-release-readiness-checklist) | Risk-tiered pre-release checklists with CLI tool |
-| [AI Accountability Design Patterns](https://github.com/simaba/ai-accountability-design-patterns) | Patterns for human oversight and escalation |
-| [Multi-Agent Governance Framework](https://github.com/simaba/multi-agent-governance-framework) | Roles, authority, and escalation for agent systems |
-| [Multi-Agent Orchestration Patterns](https://github.com/simaba/multi-agent-orchestration-patterns) | Sequential, parallel, and feedback-loop patterns |
-| [AI Agent Evaluation Framework](https://github.com/simaba/ai-agent-evaluation-framework) | System-level evaluation across 5 dimensions |
-| [Agent System Simulator](https://github.com/simaba/agent-system-simulator) | Runnable multi-agent simulator with governance controls |
-| [LLM-powered Lean Six Sigma](https://github.com/simaba/LLM-powered-Lean-Six-Sigma) | AI copilot for structured process improvement |
+| [Enterprise AI Governance Playbook](https://github.com/simaba/governance-playbook) | End-to-end AI operating model from intake to improvement |
+| [AI Release Governance Framework](https://github.com/simaba/release-governance) | Risk-based release gates for AI systems |
+| [AI Release Readiness Checklist](https://github.com/simaba/release-checklist) | Risk-tiered pre-release checklists with CLI tool |
+| [AI Accountability Design Patterns](https://github.com/simaba/accountability-patterns) | Patterns for human oversight and escalation |
+| [Multi-Agent Governance Framework](https://github.com/simaba/multi-agent-governance) | Roles, authority, and escalation for agent systems |
+| [Multi-Agent Orchestration Patterns](https://github.com/simaba/agent-orchestration) | Sequential, parallel, and feedback-loop patterns |
+| [AI Agent Evaluation Framework](https://github.com/simaba/agent-eval) | System-level evaluation across 5 dimensions |
+| [Agent System Simulator](https://github.com/simaba/agent-simulator) | Runnable multi-agent simulator with governance controls |
+| [LLM-powered Lean Six Sigma](https://github.com/simaba/lean-ai-ops) | AI copilot for structured process improvement |
 
 ---
 
