@@ -642,105 +642,93 @@ def render_tool_recommender() -> None:
     # -----------------------------------------------------------------------
     # Initialise session state keys (avoids KeyError on first run)
     # -----------------------------------------------------------------------
-    _defaults: dict[str, object] = {
-        "rec_submitted": False,
-        "rec_q1": None,
-        "rec_q2": None,
-        "rec_q3": None,
-        "rec_q4": None,
-        "rec_q5": None,
-        "rec_q6": None,
-        "rec_q7": None,
-    }
-    for key, val in _defaults.items():
-        if key not in st.session_state:
-            st.session_state[key] = val
+if "rec_submitted" not in st.session_state:
+    st.session_state["rec_submitted"] = False
 
     # -----------------------------------------------------------------------
     # Step 1 — Diagnostic questions (shown when not yet submitted)
     # -----------------------------------------------------------------------
-    if not st.session_state["rec_submitted"]:
-        st.session_state["rec_q1"] = st.radio(
-            "What kind of problem are you dealing with?",
-            options=[
-                "Too many defects or errors",
-                "Process is too slow / long lead times",
-                "Results are inconsistent / too much variation",
-                "We know there's waste but can't pinpoint it",
-                "Need to understand what's driving an outcome (Y)",
-                "Need to prevent future failures",
-                "Need to sustain / control recent gains",
-                "Not sure — I just know something is wrong",
-            ],
-            key="rec_q1",
-        )
+if not st.session_state["rec_submitted"]:
+    st.radio(
+        "What kind of problem are you dealing with?",
+        options=[
+            "Too many defects or errors",
+            "Process is too slow / long lead times",
+            "Results are inconsistent / too much variation",
+            "We know there's waste but can't pinpoint it",
+            "Need to understand what's driving an outcome (Y)",
+            "Need to prevent future failures",
+            "Need to sustain / control recent gains",
+            "Not sure — I just know something is wrong",
+        ],
+        key="rec_q1",
+    )
 
-        st.session_state["rec_q2"] = st.radio(
-            "How much data do you have?",
-            options=[
-                "None yet — haven't started measuring",
-                "Some data — a few weeks / small sample",
-                "Good data — months of history, 30+ data points",
-                "Lots of data — automated / ongoing process data",
-            ],
-            key="rec_q2",
-        )
+    st.radio(
+        "How much data do you have?",
+        options=[
+            "None yet — haven't started measuring",
+            "Some data — a few weeks / small sample",
+            "Good data — months of history, 30+ data points",
+            "Lots of data — automated / ongoing process data",
+        ],
+        key="rec_q2",
+    )
 
-        st.session_state["rec_q3"] = st.radio(
-            "What is the scope of the problem?",
-            options=[
-                "Single machine, station, or step",
-                "End-to-end process (multiple steps or departments)",
-                "Product or service line",
-                "Organisation-wide",
-            ],
-            key="rec_q3",
-        )
+    st.radio(
+        "What is the scope of the problem?",
+        options=[
+            "Single machine, station, or step",
+            "End-to-end process (multiple steps or departments)",
+            "Product or service line",
+            "Organisation-wide",
+        ],
+        key="rec_q3",
+    )
 
-        st.session_state["rec_q4"] = st.radio(
-            "How urgently do you need a result?",
-            options=[
-                "Immediate — something needs fixing this week",
-                "Short-term — 1-4 weeks",
-                "Medium-term — 1-3 months project",
-                "Long-term — formal improvement programme",
-            ],
-            key="rec_q4",
-        )
+    st.radio(
+        "How urgently do you need a result?",
+        options=[
+            "Immediate — something needs fixing this week",
+            "Short-term — 1-4 weeks",
+            "Medium-term — 1-3 months project",
+            "Long-term — formal improvement programme",
+        ],
+        key="rec_q4",
+    )
 
-        st.session_state["rec_q5"] = st.radio(
-            "How confident are you in your measurement system?",
-            options=[
-                "We have no formal measurement",
-                "We measure but haven't validated the measurement system",
-                "We've done a basic gauge check",
-                "Measurement system is validated (MSA / Gauge R&R done)",
-            ],
-            key="rec_q5",
-        )
+    st.radio(
+        "How confident are you in your measurement system?",
+        options=[
+            "We have no formal measurement",
+            "We measure but haven't validated the measurement system",
+            "We've done a basic gauge check",
+            "Measurement system is validated (MSA / Gauge R&R done)",
+        ],
+        key="rec_q5",
+    )
 
-        st.session_state["rec_q6"] = st.radio(
-            "Do you know the root cause?",
-            options=[
-                "No idea — haven't investigated yet",
-                "Have some hunches but not confirmed",
-                "Root cause is known but solution is unclear",
-                "Root cause and solution are known — need to implement and sustain",
-            ],
-            key="rec_q6",
-        )
+    st.radio(
+        "Do you know the root cause?",
+        options=[
+            "No idea — haven't investigated yet",
+            "Have some hunches but not confirmed",
+            "Root cause is known but solution is unclear",
+            "Root cause and solution are known — need to implement and sustain",
+        ],
+        key="rec_q6",
+    )
 
-        st.session_state["rec_q7"] = st.radio(
-            "What is your team's LSS experience level?",
-            options=[
-                "No prior LSS training",
-                "Yellow Belt — familiar with basics",
-                "Green Belt — can run structured projects",
-                "Black Belt — full statistical toolkit",
-            ],
-            key="rec_q7",
-        )
-
+    st.radio(
+        "What is your team's LSS experience level?",
+        options=[
+            "No prior LSS training",
+            "Yellow Belt — familiar with basics",
+            "Green Belt — can run structured projects",
+            "Black Belt — full statistical toolkit",
+        ],
+        key="rec_q7",
+    )
         st.divider()
 
         if st.button("🔍 Find my best approach →", type="primary"):
