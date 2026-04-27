@@ -30,7 +30,13 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Check key imports resolve
-        run: python -c "import src.models; import src.engine; print('Imports OK')"
+        run: python -c "import src.models; import src.engine; import src.renderers; print('Imports OK')"
 
       - name: Run tests
-        run: pytest tests/ -v --tb=short
+        run: python -m pytest tests/ -v --tb=short
+
+      - name: Run documented CLI fallback smoke path
+        run: |
+          python run_demo.py --input templates/sample_project.json --mode dmaic --audience pm > smoke-output.md
+          test -s smoke-output.md
+          grep -q "Supplier Change Request Intake" smoke-output.md
